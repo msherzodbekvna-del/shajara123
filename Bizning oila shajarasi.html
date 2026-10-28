@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bizning oila shajarasi</title>
+<style>
+:root{--bg:#f1efe6;--ink:#1f2937;--sub:#6b7280;--line:#8f9c94;--card:rgba(255,255,255,.74);--ota:#2563eb;--ona:#16a34a;--biz:#d97706;--men:#db2777;--sh:0 2px 10px rgba(0,0,0,.07);--bgop:.3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13181a;--ink:#e5e7eb;--sub:#9ca3af;--line:#55605b;--card:rgba(28,35,37,.72);--sh:0 2px 10px rgba(0,0,0,.25);--bgop:.2}}
+:root[data-theme="dark"]{--bg:#13181a;--ink:#e5e7eb;--sub:#9ca3af;--line:#55605b;--card:rgba(28,35,37,.72);--sh:0 2px 10px rgba(0,0,0,.25);--bgop:.2}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;opacity:var(--bgop);pointer-events:none}
+header{text-align:center;padding:28px 16px 6px}
+h1{margin:0;font-size:clamp(24px,5vw,38px);font-weight:700}
+header p{margin:6px 0 0;color:var(--sub);font-size:14px}
+section{margin:22px 0}
+h2{text-align:center;font-size:17px;margin:0 0 6px;font-weight:600}
+.tree{overflow-x:auto;padding:8px 14px 18px}
+.tree ul{display:flex;justify-content:center;padding-top:22px;position:relative;margin:0}
+.tree>ul{width:max-content;margin:0 auto;padding-top:0}
+.tree li{list-style:none;text-align:center;position:relative;padding:22px 7px 0}
+.tree>ul>li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:22px;border-top:2px solid var(--line)}
+.tree li::after{right:auto;left:50%;border-left:2px solid var(--line)}
+.tree li:only-child::before,.tree li:only-child::after{display:none}
+.tree li:only-child{padding-top:22px}
+.tree>ul>li::before,.tree>ul>li::after{display:none}
+.tree li:first-child::before,.tree li:last-child::after{border:0}
+.tree li:last-child::before{border-right:2px solid var(--line);border-radius:0 8px 0 0}
+.tree li:first-child::after{border-radius:8px 0 0 0}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:2px solid var(--line);height:22px}
+.card{display:inline-flex;gap:12px;padding:10px 12px 9px;background:var(--card);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:14px;border-top:3px solid var(--c);box-shadow:var(--sh)}
+.ota{--c:var(--ota)}.ona{--c:var(--ona)}.biz{--c:var(--biz)}
+.p{width:84px}
+.av{width:56px;height:56px;margin:0 auto 5px;border-radius:50%;background:var(--c) center/cover no-repeat;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;cursor:pointer;border:2px solid var(--card);box-shadow:0 1px 5px rgba(0,0,0,.12)}
+.p.men .av{box-shadow:0 0 0 3px var(--men)}
+.n{font-size:13px;font-weight:600;line-height:1.2;word-break:break-word}
+.t{font-size:11px;color:var(--sub);margin-top:1px}
+.p.men .t{color:var(--men);font-weight:600}
+</style>
+</head>
+<body>
+<svg id="bg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<ellipse cx="400" cy="795" rx="380" ry="30" fill="#6b8f4e"/>
+<path d="M355 800C368 660 346 560 378 470L422 470C454 560 432 660 445 800Z" fill="#7a5a3a"/>
+<g stroke="#7a5a3a" stroke-width="14" stroke-linecap="round" fill="none"><path d="M395 520C340 470 290 430 250 390"/><path d="M405 500C460 460 520 430 560 380"/><path d="M400 460C395 390 392 330 400 260"/></g>
+<g><circle cx="400" cy="330" r="150" fill="#4f8a3c"/><circle cx="270" cy="390" r="115" fill="#5b9a45"/><circle cx="535" cy="390" r="115" fill="#5b9a45"/><circle cx="330" cy="240" r="105" fill="#67a84e"/><circle cx="480" cy="240" r="105" fill="#67a84e"/><circle cx="405" cy="170" r="95" fill="#76b85a"/><circle cx="210" cy="300" r="70" fill="#76b85a"/><circle cx="595" cy="300" r="70" fill="#76b85a"/></g>
+</svg>
+<header>
+<h1>🌳 Bizning oila shajarasi</h1>
+<p>Rasm qo’yish uchun doira ustiga bosing</p>
+</header>
+<main id="app"></main>
+<script>
+var store={};
+try{store=JSON.parse(localStorage.getItem("shajara")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("shajara",JSON.stringify(store))}catch(e){}}
+function N(names){return{p:names.split(","),k:[].slice.call(arguments,1)}}
+var SEC=[
+["Ota tomon","ota",N("Shermuhammad,Muhabbatxon",N("Sherzodbek|dadam"),N("Dilnoza|amma,Bozorboy",N("Boburjon,Muharramoy",N("MuhammadAli")),N("Farxodjon,Sabina"),N("Odina,Saidkamol")),N("Gulbahor|amma,Sirojiddin",N("Muhammadaziz"),N("Muhammadsodiq"),N("Robiyaxon")))],
+["Ona tomon","ona",N("Dilshodbek,Inobatxon",N("Ibodatxon|onam"),N("Dilafruz|xola,Azamat",N("Sardor"),N("Diyora,Muhriddin",N("Sadiya"),N("Sumayya")),N("Oyatillo")),N("Dilnoza|xola,Nuriddin",N("Nigora,Shohjahon",N("MuhammadYasin")),N("Nurmuhammad")),N("Dildora|xola,Inomjon",N("Iqboljon"),N("Fotimaxon")),N("Dilorom|xola,Oybek",N("Shukronabegim"),N("MuhammadUmar")))],
+["Bizning oila","biz",N("Sherzodbek|dadam,Ibodatxon|onam",N("Ulug’bek|akam"),N("Mubina|men"),N("Sherozbek|ukam"))]
+];
+function setAv(a,s){if(store[s]){a.style.backgroundImage="url("+store[s]+")";a.textContent=""}}
+function person(s){
+var x=s.split("|"),d=document.createElement("div"),a=document.createElement("div"),f=document.createElement("input");
+d.className="p"+(x[1]==="men"?" men":"");
+a.className="av";a.textContent=x[0][0];a.title="Rasm qo’yish";setAv(a,s);
+f.type="file";f.accept="image/*";f.hidden=true;
+a.onclick=function(){f.click()};
+f.onchange=function(){
+var r=new FileReader();
+r.onload=function(){var im=new Image();im.onload=function(){
+var c=document.createElement("canvas"),z=Math.min(im.width,im.height);c.width=c.height=120;
+c.getContext("2d").drawImage(im,(im.width-z)/2,(im.height-z)/2,z,z,0,0,120,120);
+store[s]=c.toDataURL("image/jpeg",.8);save();setAv(a,s)};im.src=r.result};
+if(f.files[0])r.readAsDataURL(f.files[0])};
+var n=document.createElement("div");n.className="n";n.textContent=x[0];
+d.append(a,f,n);
+if(x[1]){var t=document.createElement("div");t.className="t";t.textContent=x[1]==="men"?"men":"("+x[1]+")";d.append(t)}
+return d}
+function li(n,c){
+var l=document.createElement("li"),d=document.createElement("div");
+d.className="card "+c;n.p.forEach(function(s){d.append(person(s))});l.append(d);
+if(n.k.length){var u=document.createElement("ul");n.k.forEach(function(k){u.append(li(k,c))});l.append(u)}
+return l}
+SEC.forEach(function(s){
+var e=document.createElement("section"),h=document.createElement("h2"),t=document.createElement("div"),u=document.createElement("ul");
+h.textContent=s[0];t.className="tree";u.append(li(s[2],s[1]));t.append(u);e.append(h,t);document.getElementById("app").append(e)});
+</script>
+</body>
+</html>
